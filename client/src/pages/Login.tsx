@@ -75,11 +75,9 @@ const Signup: React.FC = () => {
   };
 
   const handleForgotNavigate = async()=>{
- 
-
-   let formIsValid = true;
    const formErrors: { [key: string]: string } = {};
-
+   let formIsValid = true;
+   
    if (!email) {
      formErrors.email = "Email is required";
      formIsValid = false;
