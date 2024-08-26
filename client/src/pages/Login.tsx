@@ -74,41 +74,35 @@ const Signup: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleForgotNavigate = async()=>{
-   const formErrors: { [key: string]: string } = {};
-   let formIsValid = true;
-   
-   if (!email) {
-     formErrors.email = "Email is required";
-     formIsValid = false;
-     toast("Enter email to verify and add new password");
-     setErrors(formErrors)
-     return
-   } else if (!/\S+@\S+\.\S+/.test(email)) {
-     formErrors.email = "Invalid email address";
-     formIsValid = false;
-     setErrors(formErrors)
-     return
-   }
-
-
-   try {
-
-    const res = await axios.post('/api/resend_otp', {
-      email: email
-    })
-
-    if(res.data){
-      toast('Otp has been sent to email.')
+  const handleForgotNavigate = async () => {
+    const formErrors: { [key: string]: string } = {};
+  
+    if (!email) {
+      formErrors.email = "Email is required";
+      toast("Enter email to verify and add new password");
+      setErrors(formErrors);
+      return;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      formErrors.email = "Invalid email address";
+      setErrors(formErrors);
+      return;
     }
-  } catch (error) {
-    console.log(error)
-  }
-
-   navigate('/verify_otp?forget=true', {state: email}) 
-
-  }
-
+  
+    try {
+      const res = await axios.post('/api/resend_otp', {
+        email: email
+      });
+  
+      if (res.data) {
+        toast('Otp has been sent to email.');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  
+    navigate('/verify_otp?forget=true', { state: email });
+  };
+  
   return (
     <div
       className="relative w-screen h-screen bg-cover bg-center flex justify-center items-center"
