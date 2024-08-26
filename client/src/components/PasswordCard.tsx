@@ -23,7 +23,7 @@ const [showPassword, setShowPassword] = useState<boolean>(false);
 
       if (result.isConfirmed) {
         // Change to axios.delete if your backend supports it, else keep axios.post
-        const res = await axios.post(`/api/delete_password`, {
+        const res = await axios.post(`https://password-manager-5s8l.onrender.com/api/delete_password`, {
           id: id,
           userId: userId,
         });

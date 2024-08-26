@@ -41,7 +41,7 @@ const OtpVerification: React.FC = () => {
   const handleResendOtp = async () => {
     try {
       setSeconds(30)
-      const res = await axios.post('/api/resend_otp', {
+      const res = await axios.post('https://password-manager-5s8l.onrender.com/api/resend_otp', {
         email: emailRecieved
       })
   
@@ -55,7 +55,7 @@ const OtpVerification: React.FC = () => {
 
   const handleVerifyOtp = async () => {
    try {
-    const res = await axios.post('/api/verify', {
+    const res = await axios.post('https://password-manager-5s8l.onrender.com/api/verify', {
       otp: otp.join(''),
       email: emailRecieved
     })

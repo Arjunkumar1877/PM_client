@@ -22,7 +22,7 @@ const ForgotPassword: React.FC = () => {
     }
 
     try {
-      const res = await axios.post("/api/update_forgot_password", {
+      const res = await axios.post("https://password-manager-5s8l.onrender.com/api/update_forgot_password", {
         email: emailReceived,
         password: password,
       });

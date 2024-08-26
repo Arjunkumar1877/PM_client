@@ -49,7 +49,7 @@ const Signup: React.FC = () => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        const res = await axios.post('/api/login', {
+        const res = await axios.post('https://password-manager-5s8l.onrender.com/api/login', {
           email: email,
           password: password
         });
@@ -89,7 +89,7 @@ const Signup: React.FC = () => {
     }
   
     try {
-      const res = await axios.post('/api/resend_otp', {
+      const res = await axios.post('https://password-manager-5s8l.onrender.com/api/resend_otp', {
         email: email
       });
   

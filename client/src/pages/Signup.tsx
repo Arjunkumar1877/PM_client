@@ -70,7 +70,7 @@ const Signup: React.FC = () => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        const res = await axios.post('/api/signup', {
+        const res = await axios.post('https://password-manager-5s8l.onrender.com/api/signup', {
           username: formData.username,
           email: formData.email,
           password: formData.password,

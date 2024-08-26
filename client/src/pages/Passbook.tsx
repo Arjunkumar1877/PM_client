@@ -28,7 +28,7 @@ console.log(startDate, endDate)
 
 const fetchPasswords = async()=>{
   try {
-    const res = await axios.post('/api/get_passwords', {
+    const res = await axios.post('https://password-manager-5s8l.onrender.com/api/get_passwords', {
       userId: currentUser._id,
       startDate: startDate,
       endDate: endDate

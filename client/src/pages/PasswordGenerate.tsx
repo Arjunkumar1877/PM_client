@@ -117,7 +117,7 @@ function calculatePasswordStrength(length: number = passwordLength, charsetSize:
 const handleSavePassword = async()=>{
 if(currentUser){
   try {
-    const res = await axios.post("/api/save_password", {
+    const res = await axios.post("https://password-manager-5s8l.onrender.com/api/save_password", {
      user: currentUser._id,
      name: name,
      password: password
