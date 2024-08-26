@@ -141,11 +141,11 @@ if(currentUser){
 
   return (
     <div
-    className="relative w-screen h-screen bg-cover bg-center flex justify-center items-center overflow-x-hidden"
+    className="relative w-screen h-full bg-cover bg-center flex justify-center items-center overflow-x-hidden"
     style={{ backgroundImage: `url(${bgGround})` }}
   >
     {/* Main Container */}
-    <div className={`flex flex-col gap-12 w-auto max-w-2xl mt-28 md:w-3/4 ${bgColor} bg-opacity-70 p-10 rounded-lg shadow-2xl backdrop-blur-md `}>
+    <div className={`flex flex-col gap-12 w-auto max-w-2xl mt-10 md:w-3/4 ${bgColor} bg-opacity-70 p-10 rounded-lg shadow-2xl backdrop-blur-md `}>
       
       {/* Heading */}
       <h1 className="text-center text-white text-3xl md:text-4xl font-bold">Password Generator</h1>
